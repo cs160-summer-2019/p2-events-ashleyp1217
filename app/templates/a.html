@@ -29,31 +29,31 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="shape-container">
-					<div class="p2-circle bg-purple"></div>
-					<div class="p2-circle bg-purple"></div>
-					<div class="p2-circle bg-purple"></div>
-					<div class="p2-circle bg-purple"></div>
-					<div class="p2-circle bg-purple"></div>
-					<div class="p2-circle bg-green"></div>
-					<div class="p2-circle bg-green"></div>
-					<div class="p2-circle bg-green"></div>
-					<div class="p2-circle bg-green"></div>
-					<div class="p2-circle bg-green"></div>
-					<div class="p2-circle bg-yellow p2-border"></div>
-					<div class="p2-circle bg-yellow p2-border"></div>
-					<div class="p2-circle bg-yellow"></div>
-					<div class="p2-circle bg-yellow"></div>
-					<div class="p2-circle bg-yellow"></div>
-					<div class="p2-circle bg-orange p2-border"></div>
-					<div class="p2-circle bg-orange p2-border"></div>
-					<div class="p2-circle bg-orange"></div>
-					<div class="p2-circle bg-orange"></div>
-					<div class="p2-circle bg-orange"></div>
-					<div class="p2-circle bg-blue"></div>
-					<div class="p2-circle bg-blue"></div>
-					<div class="p2-circle bg-blue p2-border"></div>
-					<div class="p2-circle bg-blue p2-border"></div>
-					<div class="p2-circle bg-blue"></div>
+					<div class="p2-circle bg-purple" id="p1"></div>
+					<div class="p2-circle bg-purple" id="p2"></div>
+					<div class="p2-circle bg-purple" id="p3"></div>
+					<div class="p2-circle bg-purple" id="p4"></div>
+					<div class="p2-circle bg-purple" id="p5"></div>
+					<div class="p2-circle bg-green" id="g1"></div>
+					<div class="p2-circle bg-green" id="g2"></div>
+					<div class="p2-circle bg-green" id="g3"></div>
+					<div class="p2-circle bg-green" id="g4"></div>
+					<div class="p2-circle bg-green" id="g5"></div>
+					<div class="p2-circle bg-yellow p2-border" id="yb1"></div>
+					<div class="p2-circle bg-yellow p2-border" id="yb2"></div>
+					<div class="p2-circle bg-yellow" id="y1"></div>
+					<div class="p2-circle bg-yellow" id="y2"></div>
+					<div class="p2-circle bg-yellow" id ="y3"></div>
+					<div class="p2-circle bg-orange p2-border" id="ob1"></div>
+					<div class="p2-circle bg-orange p2-border" id="ob2"></div>
+					<div class="p2-circle bg-orange" id="o1"></div>
+					<div class="p2-circle bg-orange" id="o2"></div>
+					<div class="p2-circle bg-orange" id="o3"></div>
+					<div class="p2-circle bg-blue" id="b1"></div>
+					<div class="p2-circle bg-blue" id="b2"></div>
+					<div class="p2-circle bg-blue p2-border" id="bb1"></div>
+					<div class="p2-circle bg-blue p2-border" id="bb2"></div>
+					<div class="p2-circle bg-blue" id="b3"></div>
 					<div class="p2-circle" id="gradient-circle"></div>
 				</div>
 			</div>
@@ -63,7 +63,34 @@
 
 
 <script type="text/javascript">
-	// your solution here
+  	//Clicking on purple bubble pops all purple bubbles
+  $("#p1,#p2,#p3,#p4,#p5").click(function(){
+   // $("#p1,#p2,#p3,#p4,#p5").css("visibility","hidden")();
+     $("#p1,#p2,#p3,#p4,#p5").hide()
+  });
+  
+  //Clicking on green bubble pops all green and blue bubbles
+  $("#g1,#g2,#g3,#g4,#g5").click(function(){
+    $("#g1,#g2,#g3,#g4,#g5,#b1,#b2,#b3,#bb1,#bb2").hide();
+  });
+  
+  //Clicking on orange bordered bubble pops all other orange bordered bubbles
+  $("#ob1,#ob2").click(function(x){
+    $("#ob1,#ob2").hide();
+    $(x.target).show();
+  });
+  
+  //Hovering over gradient bubble hides the gradient bubble
+  $("#gradient-circle").hover(function(){
+    $("#gradient-circle").hide();
+  //}, function(){
+    //$("#gradient-circle").hide();
+  })
+  
+  //Reset
+    $("button").click(function(){
+  $("#p1,#p2,#p3,#p4,#p5,#g1,#g2,#g3,#g4,#g5,#yb1,#yb2,#y1,#y2,#y3,#ob1,#ob2,#o1,#o2,#o3,#b1,#b2,#bb1,#bb2,#b3,#gradient-circle").show();
+  });
 
 </script>
 </body>
